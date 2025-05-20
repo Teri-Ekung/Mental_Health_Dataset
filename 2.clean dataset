@@ -1,0 +1,17 @@
+# Clean the dataset
+# 1. Remove duplicates
+# 2. Standardize column names
+# 3. Handle missing values
+
+# Step 1: Remove duplicate rows
+df_cleaned = df.drop_duplicates()
+
+# Step 2: Standardize column names
+df_cleaned.columns = df_cleaned.columns.str.strip().str.lower().str.replace(' ', '_')
+
+# Step 3: Handle missing values
+# For simplicity, remove rows with any missing values
+df_cleaned = df_cleaned.dropna()
+
+# Show cleaned dataset summary
+df_cleaned.info()
