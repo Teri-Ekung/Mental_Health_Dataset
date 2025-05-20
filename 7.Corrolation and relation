@@ -1,0 +1,24 @@
+import pandas as pd
+
+# Assuming df_cleaned is already your cleaned dataset
+
+# 1. Mood Swings vs Work Interest
+mood_vs_work = pd.crosstab(df_cleaned['mood_swings'], df_cleaned['work_interest'], normalize='index')
+
+# 2. Mental Health History vs Coping Struggles
+history_vs_coping = pd.crosstab(df_cleaned['mental_health_history'], df_cleaned['coping_struggles'], normalize='index')
+
+# 3. Family History vs Treatment
+family_vs_treatment = pd.crosstab(df_cleaned['family_history'], df_cleaned['treatment'], normalize='index')
+
+# 4. Days Indoors vs Mood Swings
+indoors_vs_mood = pd.crosstab(df_cleaned['days_indoors'], df_cleaned['mood_swings'], normalize='index')
+
+# 5. Growing Stress vs Changes in Habits
+stress_vs_habits = pd.crosstab(df_cleaned['growing_stress'], df_cleaned['changes_habits'], normalize='index')
+
+# 6. Gender vs Treatment
+gender_vs_treatment = pd.crosstab(df_cleaned['gender'], df_cleaned['treatment'], normalize='index')
+
+# Display all relationships
+mood_vs_work, history_vs_coping, family_vs_treatment, indoors_vs_mood, stress_vs_habits, gender_vs_treatment
