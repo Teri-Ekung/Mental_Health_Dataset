@@ -1,0 +1,29 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set plot styles
+sns.set(style="whitegrid")
+
+# Create subplots for visual summaries
+fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+
+# 1. Gender distribution
+sns.countplot(ax=axes[0, 0], data=df_cleaned, x='gender', order=df_cleaned['gender'].value_counts().index)
+axes[0, 0].set_title('Gender Distribution')
+
+# 2. Treatment counts
+sns.countplot(ax=axes[0, 1], data=df_cleaned, x='treatment', order=df_cleaned['treatment'].value_counts().index)
+axes[0, 1].set_title('Treatment vs No Treatment')
+
+# 3. Top 10 countries
+top_countries = df_cleaned['country'].value_counts().head(10)
+sns.barplot(ax=axes[1, 0], x=top_countries.values, y=top_countries.index)
+axes[1, 0].set_title('Top 10 Countries by Response Count')
+axes[1, 0].set_xlabel('Number of Responses')
+
+# 4. Mood swings distribution
+sns.countplot(ax=axes[1, 1], data=df_cleaned, x='mood_swings', order=df_cleaned['mood_swings'].value_counts().index)
+axes[1, 1].set_title('Mood Swings Distribution')
+
+plt.tight_layout()
+plt.show()
