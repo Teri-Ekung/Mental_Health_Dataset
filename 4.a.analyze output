@@ -1,0 +1,29 @@
+(gender
+ Male      234000
+ Female     50858
+ Name: count, dtype: int64,
+ treatment
+ Yes    143331
+ No     141527
+ Name: count, dtype: int64,
+ country
+ United States     165869
+ United Kingdom     50576
+ Canada             17529
+ Australia           6014
+ Netherlands         5891
+ Ireland             5542
+ Germany             4680
+ Sweden              2812
+ India               2771
+ France              2340
+ Name: count, dtype: int64,
+ mood_swings
+ Medium    98592
+ Low       97392
+ High      88874
+ Name: count, dtype: int64,
+ mental_health_history  Maybe     No    Yes
+ treatment                                 
+ No                     45700  50693  45134
+ Yes                    47108  50781  45442)
