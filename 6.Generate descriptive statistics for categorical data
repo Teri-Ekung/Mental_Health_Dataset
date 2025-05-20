@@ -1,0 +1,14 @@
+# Generate descriptive statistics for categorical data
+categorical_summary = df_cleaned.describe(include='object')
+
+# Count of unique values for each categorical column
+unique_value_counts = df_cleaned.nunique()
+
+# Frequency of each value in key columns
+gender_dist = df_cleaned['gender'].value_counts()
+treatment_dist = df_cleaned['treatment'].value_counts()
+country_dist = df_cleaned['country'].value_counts().head(10)
+mood_swing_dist = df_cleaned['mood_swings'].value_counts()
+mental_health_history_dist = df_cleaned['mental_health_history'].value_counts()
+
+categorical_summary, unique_value_counts, gender_dist, treatment_dist, country_dist, mood_swing_dist, mental_health_history_dist
