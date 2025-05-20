@@ -1,0 +1,6 @@
+# Save the cleaned dataset to a new CSV file
+cleaned_file_path = "MHD.csv"
+df_cleaned.to_csv(cleaned_file_path, index=False)
+
+cleaned_file_path
+
