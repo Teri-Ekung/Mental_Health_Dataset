@@ -1,0 +1,33 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Assuming the model has been trained and predictions have been made
+# We will simulate a classification report dictionary as example output
+classification_report_dict = {
+    '0': {'precision': 0.87, 'recall': 0.85, 'f1-score': 0.86, 'support': 80},
+    '1': {'precision': 0.89, 'recall': 0.90, 'f1-score': 0.89, 'support': 108},
+    'accuracy': 0.88,
+    'macro avg': {'precision': 0.88, 'recall': 0.88, 'f1-score': 0.88, 'support': 188},
+    'weighted avg': {'precision': 0.88, 'recall': 0.88, 'f1-score': 0.88, 'support': 188}
+}
+
+# Extract class labels and metrics
+classes = ['0', '1']
+metrics = ['precision', 'recall', 'f1-score']
+
+# Build data for plotting
+values = {metric: [classification_report_dict[cls][metric] for cls in classes] for metric in metrics}
+
+# Plotting
+plt.figure(figsize=(10, 6))
+for metric in metrics:
+    plt.plot(classes, values[metric], marker='o', label=metric.capitalize())
+
+plt.title('Classification Metrics by Class (Line Graph)')
+plt.xlabel('Class (0 = No Treatment, 1 = Treatment)')
+plt.ylabel('Score')
+plt.ylim(0, 1.1)
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.show()
