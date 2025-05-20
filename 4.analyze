@@ -1,0 +1,18 @@
+# Basic analysis of the cleaned dataset
+
+# 1. Overview of gender distribution
+gender_counts = df_cleaned['gender'].value_counts()
+
+# 2. Treatment vs no treatment
+treatment_counts = df_cleaned['treatment'].value_counts()
+
+# 3. Countries with the highest responses
+top_countries = df_cleaned['country'].value_counts().head(10)
+
+# 4. Mood swings frequency
+mood_swings_counts = df_cleaned['mood_swings'].value_counts()
+
+# 5. Correlation-like exploration: Cross-tab of treatment and mental health history
+treatment_vs_history = pd.crosstab(df_cleaned['treatment'], df_cleaned['mental_health_history'])
+
+gender_counts, treatment_counts, top_countries, mood_swings_counts, treatment_vs_history
