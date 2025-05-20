@@ -1,0 +1,36 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+
+# Encode categorical variables
+df_model = df_cleaned.copy()
+label_encoders = {}
+
+for column in df_model.columns:
+    if df_model[column].dtype == 'object':
+        le = LabelEncoder()
+        df_model[column] = le.fit_transform(df_model[column])
+        label_encoders[column] = le
+
+# Define features and target
+X = df_model.drop('treatment', axis=1)
+y = df_model['treatment']
+
+# Split into train/test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Build the model
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+accuracy = accuracy_score(y_test, y_pred)
+conf_matrix = confusion_matrix(y_test, y_pred)
+class_report = classification_report(y_test, y_pred)
+
+accuracy, conf_matrix, class_report
