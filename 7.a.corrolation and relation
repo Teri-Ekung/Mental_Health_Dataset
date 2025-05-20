@@ -1,0 +1,30 @@
+(work_interest     Maybe        No       Yes
+ mood_swings                                
+ High           0.325585  0.343182  0.331233
+ Low            0.352657  0.344073  0.303269
+ Medium         0.358143  0.396848  0.245010,
+ coping_struggles             No       Yes
+ mental_health_history                    
+ Maybe                  0.560835  0.439165
+ No                     0.502474  0.497526
+ Yes                    0.521993  0.478007,
+ treatment             No       Yes
+ family_history                    
+ No              0.646066  0.353934
+ Yes             0.268202  0.731798,
+ mood_swings             High       Low    Medium
+ days_indoors                                    
+ 1-14 days           0.262251  0.401878  0.335871
+ 15-30 days          0.346130  0.295932  0.357937
+ 31-60 days          0.277804  0.371355  0.350841
+ Go out Every day    0.370017  0.327514  0.302469
+ More than 2 months  0.312071  0.301047  0.386882,
+ changes_habits     Maybe        No       Yes
+ growing_stress                              
+ Maybe           0.292024  0.314312  0.393664
+ No              0.297985  0.305933  0.396081
+ Yes             0.383572  0.279610  0.336819,
+ treatment        No       Yes
+ gender                       
+ Female     0.313559  0.686441
+ Male       0.536667  0.463333)
